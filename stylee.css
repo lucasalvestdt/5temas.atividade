@@ -1,0 +1,431 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #080d18;
+    --superficie: #111c2e;
+    --texto: #e6edff;
+    --suave: #9baac7;
+    --destaque: #a78bfa;
+    --sobre-destaque: #080d18;
+    --borda: 1px solid #293956;
+    --raio: 16px;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --fonte-titulo: 'Orbitron', sans-serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+    --peso-titulo: 700;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: var(--fonte-texto);
+    transition: background 0.4s, color 0.4s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CABEÇALHO */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: var(--borda);
+    background: var(--superficie);
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-weight: var(--peso-titulo);
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--destaque);
+}
+
+.topo nav {
+    display: flex;
+    gap: 30px;
+}
+
+.topo nav a {
+    color: var(--suave);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.topo nav a:hover {
+    color: var(--destaque);
+}
+
+/* SELETOR DE TEMAS */
+
+.seletor {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.seletor h2 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 12px;
+}
+
+.seletor p {
+    color: var(--suave);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.botoes-temas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.botoes-temas input {
+    display: none;
+}
+
+.botoes-temas label {
+    padding: 12px 20px;
+    border: var(--borda);
+    border-radius: var(--raio);
+    color: var(--suave);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 13px;
+}
+
+.botoes-temas label:hover {
+    color: var(--destaque);
+    border-color: var(--destaque);
+}
+
+.botoes-temas input:checked + label {
+    background: var(--destaque);
+    color: var(--sobre-destaque);
+    border-color: var(--destaque);
+    font-weight: 700;
+}
+
+/* APRESENTAÇÃO */
+
+.hero {
+    min-height: 420px;
+    padding: 70px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--superficie);
+}
+
+.hero-conteudo {
+    max-width: 600px;
+}
+
+.subtitulo {
+    color: var(--destaque);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(35px, 5vw, 60px);
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--suave);
+    line-height: 1.8;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 25px;
+    background: var(--destaque);
+    color: var(--sobre-destaque);
+    border-radius: var(--raio);
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+/* ELEMENTO DECORATIVO */
+
+.elemento-visual {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: var(--destaque);
+    opacity: 0.8;
+    box-shadow: 0 0 70px var(--destaque);
+}
+
+.circulo-menor {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--superficie);
+    border: 3px solid var(--texto);
+    transform: translate(65px, -65px);
+}
+
+/* CARTÕES */
+
+.conteudo {
+    padding: 80px 8%;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-secao span {
+    color: var(--destaque);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.titulo-secao h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.titulo-secao p {
+    color: var(--suave);
+    font-size: 14px;
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.cartao {
+    padding: 28px;
+    background: var(--superficie);
+    border: var(--borda);
+    border-radius: var(--raio);
+    transition: 0.3s;
+}
+
+.cartao:hover {
+    transform: translateY(-7px);
+    border-color: var(--destaque);
+    box-shadow: var(--sombra);
+}
+
+.numero {
+    color: var(--destaque);
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cartao h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.cartao p {
+    color: var(--suave);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* SOBRE */
+
+.sobre {
+    margin: 0 8% 80px;
+    padding: 45px;
+    background: var(--superficie);
+    border: var(--borda);
+    border-radius: var(--raio);
+}
+
+.sobre h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 30px;
+    margin: 15px 0 25px;
+}
+
+.sobre p {
+    color: var(--suave);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 850px;
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: var(--superficie);
+    border-top: var(--borda);
+    color: var(--suave);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* TEMA 1 - PRÉ-HISTÓRICO */
+
+body:has(#t-prehistorico:checked) {
+    --fundo: #211a13;
+    --superficie: #352719;
+    --texto: #f4e6ca;
+    --suave: #c2a982;
+    --destaque: #a5a85a;
+    --sobre-destaque: #211a13;
+    --borda: 1px solid #665037;
+    --raio: 5px;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --fonte-titulo: 'Cinzel', serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+    --peso-titulo: 700;
+}
+
+/* TEMA 2 - OCEANO */
+
+body:has(#t-oceano:checked) {
+    --fundo: #061c2b;
+    --superficie: #0c3448;
+    --texto: #e0faff;
+    --suave: #91c6d3;
+    --destaque: #28d6c4;
+    --sobre-destaque: #06232d;
+    --borda: 1px solid #176078;
+    --raio: 22px;
+    --sombra: 0 10px 35px rgba(0, 180, 200, 0.15);
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'Poppins', sans-serif;
+    --peso-titulo: 700;
+}
+
+/* TEMA 3 - FOGO */
+
+body:has(#t-fogo:checked) {
+    --fundo: #210c09;
+    --superficie: #40150e;
+    --texto: #fff0df;
+    --suave: #d8a18b;
+    --destaque: #ff762e;
+    --sobre-destaque: #2b0d08;
+    --borda: 1px solid #8d321d;
+    --raio: 3px;
+    --sombra: 0 10px 35px rgba(255, 70, 0, 0.18);
+    --fonte-titulo: 'Cinzel', serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+    --peso-titulo: 700;
+}
+
+/* TEMA 4 - AR */
+
+body:has(#t-ar:checked) {
+    --fundo: #eaf5fa;
+    --superficie: #ffffff;
+    --texto: #263b50;
+    --suave: #71879a;
+    --destaque: #65bce5;
+    --sobre-destaque: #ffffff;
+    --borda: 1px solid #c7e0ed;
+    --raio: 25px;
+    --sombra: 0 10px 35px rgba(80, 150, 190, 0.12);
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'Poppins', sans-serif;
+    --peso-titulo: 600;
+}
+
+/* TEMA 5 - ESPAÇO */
+
+body:has(#t-espaco:checked) {
+    --fundo: #080d18;
+    --superficie: #111c2e;
+    --texto: #e6edff;
+    --suave: #9baac7;
+    --destaque: #a78bfa;
+    --sobre-destaque: #080d18;
+    --borda: 1px solid #293956;
+    --raio: 16px;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --fonte-titulo: 'Orbitron', sans-serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+    --peso-titulo: 700;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .topo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topo nav {
+        gap: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 8%;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .elemento-visual {
+        transform: scale(0.8);
+    }
+
+    .sobre {
+        padding: 28px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 24px;
+    }
+}
